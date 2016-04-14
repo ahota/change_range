@@ -1,13 +1,15 @@
 class RangeChanger {
     //simple one-liner
-    pubic float changeRangeMinimal(float value, float oldMin, float oldMax,
-                                                float newMin, float newMax) {
+    public static
+    float changeRangeMinimal(float value, float oldMin, float oldMax,
+                                          float newMin, float newMax) {
         return (newMax-newMin)*(value-oldMin)/(oldMax-oldMin)+newMin;
     }
 
     //in case range is needed
-    public float changeRange(float value, float oldMin, float oldMax,
-                                          float newMin, float newMax) {
+    public static
+    float changeRange(float value, float oldMin, float oldMax,
+                                   float newMin, float newMax) {
         float oldRange = oldMax - oldMin;
         float newRange = newMax - newMin;
         return newRange * (value - oldMin)/oldRange + newMin;

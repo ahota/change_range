@@ -1,8 +1,17 @@
 #include<stdio.h>
 
+float change_range_minimal(float value, float old_min, float old_max,
+                                        float new_min, float new_max);
 float change_range(float value, float old_min, float old_max,
                                 float new_min, float new_max);
 
+//simple one-liner
+float change_range_minimal(float value, float old_min, float old_max,
+                                        float new_min, float new_max) {
+    return (new_max-new_min)*(value-old_min)/(old_max-old_min)+new_min;
+}
+
+//in case range is needed
 float change_range(float value, float old_min, float old_max,
                                 float new_min, float new_max) {
     float old_range = old_max - old_min;
